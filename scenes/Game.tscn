@@ -39,8 +39,16 @@ margin_bottom = 511.143
 
 [node name="FinalScreen" parent="." instance=ExtResource( 8 )]
 visible = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
 [connection signal="goalLeft" from="Field" to="." method="_on_Field_goalLeft"]
 [connection signal="goalRight" from="Field" to="." method="_on_Field_goalRight"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
+[connection signal="gui_down_pressed" from="HUD" to="Racket/PlayerInputComponent" method="_on_HUD_gui_down_pressed"]
+[connection signal="gui_down_released" from="HUD" to="Racket/PlayerInputComponent" method="_on_HUD_gui_down_released"]
+[connection signal="gui_up_pressed" from="HUD" to="Racket/PlayerInputComponent" method="_on_HUD_gui_up_pressed"]
+[connection signal="gui_up_released" from="HUD" to="Racket/PlayerInputComponent" method="_on_HUD_gui_up_released"]
 [connection signal="exit" from="FinalScreen" to="." method="_on_FinalScreen_exit"]
 [connection signal="new_round" from="FinalScreen" to="." method="_on_FinalScreen_new_round"]
